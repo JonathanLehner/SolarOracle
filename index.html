@@ -7,8 +7,11 @@
 </head>
 
 <body>
-    <h1>Gas Stats With Moralis</h1> <button id="btn-login">Moralis Login</button> <button
-        id="btn-logout">Logout</button>
+    <h1>Gas Stats With Moralis</h1> 
+        <button id="btn-login">Moralis Login</button> 
+        <button id="btn-logout">Logout</button>
+        <button id="btn-get-stats">Refresh Stats</button>
+        <ul id="gas-stats"></ul>
     <script>      // connect to Moralis server      
         const serverUrl = "https://bdxiyxxz740d.usemoralis.com:2053/server";      
         const appId = "AZ6MLFLTTUNRtewAQtBT3jQOqmd3T6ys8swNhzrG";      
@@ -35,19 +38,46 @@
             if (user) {
                 getUserTransactions(user);
             }
+            getAverageGasPrices();
         }
         async function getUserTransactions(user) {
             // create query
             const query = new Moralis.Query("EthTransactions");
             query.equalTo("from_address", user.get("ethAddress"));
+            
+            // subscribe to query updates ** add this**
+            const subscription = await query.subscribe();
+            handleNewTransaction(subscription);
+            
             // run query
             const results = await query.find();
             console.log("user transactions:", results);
         }
+
+        async function handleNewTransaction(subscription) {  
+            // log each new transaction  
+            subscription.on("create", function(data) {    
+                console.log("new transaction: ", data);  
+            });
+        }
+
+        async function getAverageGasPrices() {  
+            const results = await Moralis.Cloud.run("getAvgGas");  
+            console.log("average user gas prices:", results);
+
+            renderGasStats(results);
+        }
+
+        function renderGasStats(data) {  
+            const container = document.getElementById("gas-stats");  
+            container.innerHTML = data.map(function (row, rank) {      
+                return `<li>#${rank + 1}: ${Math.round(row.avgGas)} gwei</li>`;    
+            }).join("");
+        }
+
         // get stats on page load
         getStats();
     </script>
-    <button id="btn-get-stats">Refresh Stats</button>
 </body>
 
 </html>
