@@ -19,7 +19,7 @@ contract MetaCoin {
 
     string public name = "Test Coin Wow";
 
-    function sendCoin(address receiver, uint256 amount)
+    function topup(address receiver, uint256 amount)
         public
         returns (bool sufficient)
     {

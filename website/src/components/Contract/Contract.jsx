@@ -54,6 +54,13 @@ export default function Contract() {
           borderRadius: "0.5rem",
         }}
       >
+        <div>
+        After you pay the electricity fee deposit, every month we will deduct USD $0.15 for each kWh of consumption according to the oracle.  
+        </div>
+        <br/>
+        <div>
+          You need at least $80 remaining in your account on the 5th of every month or your contract will be canceled.
+        </div>
         <Form.Provider
           onFormFinish={async (name, { forms }) => {
             const params = forms[name].getFieldsValue();
@@ -115,7 +122,7 @@ export default function Contract() {
                       required
                       style={{ marginBottom: "15px" }}
                     >
-                      <Input placeholder="input placeholder" />
+                      <Input defaultValue={input.defaultValue} />
                     </Form.Item>
                   ))}
                   <Form.Item style={{ marginBottom: "5px" }}>

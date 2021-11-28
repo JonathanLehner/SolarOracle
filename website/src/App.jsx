@@ -83,8 +83,8 @@ const App = ({ isServerInfo }) => {
             }}
             defaultSelectedKeys={["quickstart"]}
           >
-            <Menu.Item key="wallet">
-              <NavLink to="/wallet">👛 Wallet</NavLink>
+            <Menu.Item key="payments">
+              <NavLink to="/payments">👛 Payments</NavLink>
             </Menu.Item>
             {/*needs onramper plugin*/}
             {/*<Menu.Item key="onramp">
@@ -94,8 +94,8 @@ const App = ({ isServerInfo }) => {
             {/*<Menu.Item key="nft">
               <NavLink to="/nftBalance">🖼 NFTs</NavLink>
             </Menu.Item>*/}
-            <Menu.Item key="contract">
-              <NavLink to="/contract">📄 Contract</NavLink>
+            <Menu.Item key="topup">
+              <NavLink to="/topup">📄 Top Up</NavLink>
             </Menu.Item>
           </Menu>
           <div style={styles.headerRight}>
@@ -109,7 +109,7 @@ const App = ({ isServerInfo }) => {
             <Route path="/quickstart">
               <QuickStart isServerInfo={isServerInfo} />
             </Route>
-            <Route path="/wallet">
+            <Route path="/payments">
               <Wallet />
             </Route>
             <Route path="/1inch">
@@ -137,14 +137,14 @@ const App = ({ isServerInfo }) => {
             <Route path="/nftBalance">
               <NFTBalance />
             </Route>
-            <Route path="/contract">
+            <Route path="/topup">
               <Contract />
             </Route>
             <Route path="/nonauthenticated">
               <>Please login using the "Authenticate" button</>
             </Route>
           </Switch>
-          <Redirect to="/quickstart" />
+          <Redirect to="/topup" />
         </div>
       </Router>
       <Footer style={{ textAlign: "center" }}>

@@ -23,6 +23,11 @@ const styles = {
 
 const menuItems = [
   {
+    key: "0x2a",
+    value: "Kovan Testnet",
+    icon: <ETHLogo />,
+  },
+  {
     key: "0x1",
     value: "Ethereum",
     icon: <ETHLogo />,
@@ -30,11 +35,6 @@ const menuItems = [
   {
     key: "0x539",
     value: "Local Chain",
-    icon: <ETHLogo />,
-  },
-  {
-    key: "0x2a",
-    value: "Kovan Testnet",
     icon: <ETHLogo />,
   },
   {
