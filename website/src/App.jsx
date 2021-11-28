@@ -86,27 +86,20 @@ const App = ({ isServerInfo }) => {
             <Menu.Item key="wallet">
               <NavLink to="/wallet">👛 Wallet</NavLink>
             </Menu.Item>
-            <Menu.Item key="onramp">
+            {/*needs onramper plugin*/}
+            {/*<Menu.Item key="onramp">
               <NavLink to="/onramp">💵 Fiat</NavLink>
-            </Menu.Item>
-            <Menu.Item key="balances">
-              <NavLink to="/erc20balance">💰 Balances</NavLink>
-            </Menu.Item>
-            <Menu.Item key="nft">
+            </Menu.Item>*/}
+            {/*will show your solar anels*/}
+            {/*<Menu.Item key="nft">
               <NavLink to="/nftBalance">🖼 NFTs</NavLink>
-            </Menu.Item>
+            </Menu.Item>*/}
             <Menu.Item key="contract">
               <NavLink to="/contract">📄 Contract</NavLink>
             </Menu.Item>
           </Menu>
           <div style={styles.headerRight}>
             <Chains />
-            <TokenPrice
-              address="0x1f9840a85d5af5bf1d1762f925bdaddc4201f984"
-              chain="eth"
-              image="https://cloudflare-ipfs.com/ipfs/QmXttGpZrECX5qCyXbBQiqgQNytVGeZW5Anewvh2jc4psg/"
-              size="40px"
-            />
             <NativeBalance />
             <Account />
           </div>
@@ -155,38 +148,9 @@ const App = ({ isServerInfo }) => {
         </div>
       </Router>
       <Footer style={{ textAlign: "center" }}>
-        <Text style={{ display: "block" }}>
-          ⭐️ Please star this{" "}
-          <a
-            href="https://github.com/ethereum-boilerplate/ethereum-boilerplate/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            boilerplate
-          </a>
-          , every star makes us very happy!
-        </Text>
 
         <Text style={{ display: "block" }}>
-          🙋 You have questions? Ask them on the {""}
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://forum.moralis.io/t/ethereum-boilerplate-questions/3951/29"
-          >
-            Moralis forum
-          </a>
-        </Text>
-
-        <Text style={{ display: "block" }}>
-          📖 Read more about{" "}
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://moralis.io?utm_source=boilerplatehosted&utm_medium=todo&utm_campaign=ethereum-boilerplat"
-          >
-            Moralis
-          </a>
+          Copyright © 2021 Peer2Panel
         </Text>
       </Footer>
     </Layout>

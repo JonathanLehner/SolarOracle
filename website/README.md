@@ -9,3 +9,6 @@ Deploy like this https://www.youtube.com/watch?v=csbMR9wSFX0
 
 ## development
 http://localhost:3000/quickstart
+
+## use this Plugin for Fiat
+https://moralis.io/plugins/fiat/
