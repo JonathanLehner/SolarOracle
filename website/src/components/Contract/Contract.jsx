@@ -5,6 +5,7 @@ import Address from "components/Address/Address";
 import { useMoralis, useMoralisQuery } from "react-moralis";
 import { getEllipsisTxt } from "helpers/formatters";
 import { useEffect } from "react";
+import Clipboard from 'react-clipboard.js';
 
 const { Text } = Typography;
 
@@ -60,6 +61,17 @@ export default function Contract() {
         <br/>
         <div>
           You need at least $80 remaining in your account on the 5th of every month or your contract will be canceled.
+        </div>
+        <br/>
+        <div>
+          Your contracts
+          <ul>
+            <li>
+              <Clipboard data-clipboard-text="0xe7e3e925e5dcfeaf5c5cebfbc6efd4b404b0e607">
+                0xe7e3e925e5dcfeaf5c5cebfbc6efd4b404b0e607
+              </Clipboard>
+            </li>
+          </ul>
         </div>
         <Form.Provider
           onFormFinish={async (name, { forms }) => {

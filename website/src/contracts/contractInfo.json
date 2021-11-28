@@ -33,7 +33,7 @@
           "internalType": "address",
           "name": "receiver",
           "type": "address",
-          "defaultValue": "0xe7e3e925e5dcfeaf5c5cebfbc6efd4b404b0e607"
+          "defaultValue": ""
         },
         {
           "internalType": "uint256",
