@@ -22,6 +22,7 @@ app.get('/solar_info', (req, res) => {
 
 // test with
 // curl "http://localhost:3001/solar_info?server_id=3"
+// curl "https://oracle.peer2panel.com/solar_info?server_id=3"
 
 app.post('/update', (req, res) => {
   console.log(req.body)
@@ -40,6 +41,7 @@ app.post('/update', (req, res) => {
 
 // test with
 // curl -X POST http://localhost:3001/update -H 'Content-Type: application/json' -d '{"server_id": 3,"secret": 8, "production": 500}'
+// curl -X POST https://oracle.peer2panel.com/update -H 'Content-Type: application/json' -d '{"server_id": 3,"secret": 8, "production": 500}'
 
 WebApp.connectHandlers.use(exp);
 

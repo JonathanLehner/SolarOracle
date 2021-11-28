@@ -6,3 +6,6 @@ in the website you can login with Metamask and pay Ether to a smart contract to 
 
 ## smart contracts
 Deploy like this https://www.youtube.com/watch?v=csbMR9wSFX0 
+
+## development
+http://localhost:3000/quickstart

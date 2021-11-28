@@ -21,6 +21,13 @@ const App = (props) => (
     <Router {...props}>
       <NavBar />
       <RouterSwitch />
+      <div>
+        test with
+        <div style={{fontSize: "10px"}}>
+          <div>curl "https://oracle.peer2panel.com/solar_info?server_id=3"</div>
+          <div>curl -X POST https://oracle.peer2panel.com/update -H 'Content-Type: application/json' -d '&#123;"server_id": 3,"secret": 8, "production": 500&#125;'</div>
+        </div>
+      </div>
     </Router>
   </div>
 );
