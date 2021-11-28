@@ -23,6 +23,11 @@ const styles = {
 
 const menuItems = [
   {
+    key: "0x4",
+    value: "Rinkeby Testnet",
+    icon: <ETHLogo />,
+  },
+  {
     key: "0x2a",
     value: "Kovan Testnet",
     icon: <ETHLogo />,
