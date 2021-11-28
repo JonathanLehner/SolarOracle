@@ -1,0 +1,6 @@
+{
+  "public": {
+    "baseURL": "https://oracle.peer2panel.com",
+    "isProduction": true
+  }
+}
